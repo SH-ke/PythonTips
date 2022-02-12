@@ -1,6 +1,6 @@
-# $ Python $ 笔记 $ PythonTips $
+#  Python 笔记 PythonTips
 
-## 01. $ Anaconda $ 环境配置
+## 01.  Anaconda 环境配置
 
 ```shell
 # 环境变量
@@ -26,7 +26,37 @@ jupyter kernelspec list
 jupyter kernelspec remove kernelname
 ```
 
-### 1.1  $ pip\; freeze $ 导出含有路径 $ (@ file:///) $ 问题小记
+Windows 用户无法直接创建名为 `.condarc` 的文件，可先执行 `conda config --set show_channel_urls yes` 生成该文件。生成的文件在`C:\Users\用户名\.condarc`
+
+```shell
+# conda文件
+# 中科大镜像源
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/
+# 北京外国语大学源
+conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/main
+conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/free
+conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/r
+conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro
+conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2
+#清华源
+conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+```
+
+## 
+
+### 1.1  问题小记
+
+pip freeze 导出含有路径(@ file:///)
 
 当你遇到此类问题时，可以暂时考虑使用如下命令生成 `requirements.txt` 文件
 
@@ -41,9 +71,9 @@ pip install -r requirements.txt
 
 使用上述命令导出的文件中，会包含如下几个包：`distribute`，`pip`，`setuptools`，`wheel`，建议手动删除！
 
-## 02. $ pandas \;\&\; numpy \;\&\; matplotlib $
+## 02. NPM
 
-运算
+ pandas & numpy & matplotlib 运算
 
 ```python
 # 第0列为index 只读取前3列
@@ -139,39 +169,9 @@ A = arange(1, 5, 2)  # 步长默认为2
 x = linspace(0, 2*pi, N+1)  # N+1个点
 ```
 
+## 03.virtualenv 使用
 
-
-## 03. 国内源
-
-Windows 用户无法直接创建名为 `.condarc` 的文件，可先执行 `conda config --set show_channel_urls yes` 生成该文件。生成的文件在`C:\Users\用户名\.condarc`
-
-```shell
-# conda文件
-# 中科大镜像源
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
-conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/
-# 北京外国语大学源
-conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/main
-conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/free
-conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/r
-conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/pro
-conda config --add channels  https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2
-#清华源
-conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
-conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
-conda config --add channels  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-```
-
-## 04.$virtualenv$ 使用
-
-### 4.1 新建环境
+### 3.1 新建环境
 
 ```shell
 # 跳转到指定目录，在该目录下新建环境 cv2 指定 python 版本为 3.8
@@ -189,7 +189,7 @@ PS D:\Users\86180\virtualenv\cv2\Scripts> .\activate
 (cv2) PS D:\Users\86180\virtualenv\cv2\Scripts>
 ```
 
- ## 05.Django 项目
+ ## 04.Django 项目
 
 ```shell
 # 创建Django项目
@@ -254,7 +254,7 @@ D:\DATABASE_SHKE_DEV\PYTHON\DJANGO\OIL_TEST
    python manage.py runserver
    ```
 
-### 06.MySQL
+## 06.MySQL
 
 ```shell
 # 启动服务
@@ -286,7 +286,7 @@ select * from table_name;
 alter user 'root'@'localhost' identifided by 'root'
 ```
 
-#### Django 操作数据库
+**Django 操作数据库**
 
 ```python
 # 在models.py新建一个类
